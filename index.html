@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-    <title>Simple Kanban</title>
+    <title>Канбан доска</title>
 </head>
 <body>
    <div id="createProject">
-       <h1>Create Project</h1>
+       <h1>Создание проекта</h1>
        <h2>Existing Projects</h2>
        <select name="existing" id="existing" class="selectLayout">
            <option value="none" id="none">None</option>
        </select>
-       <h2>Project Name</h2>
+       <h2>Название проекта</h2>
        <input type="text" id="projectName">
        <h2>Add Columns</h2>
        <input type="text" id="addColumn">
        <div id="columns">
            
        </div>
-       <button id="addToColumns" class="blueButton">Add Column</button>
-       <button id="createKanban" class="blueButton">Create Kanban</button>
+       <button id="addToColumns" class="blueButton">Добавить колонку</button>
+       <button id="createKanban" class="blueButton">Создать</button>
    </div>
    <h1 id="boardTitle">Board Title</h1>
     <div id="board">
@@ -32,16 +32,16 @@
                 <h2>Test</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae hic vero quam. Consectetur nam assumenda, natus repudiandae repellendus esse, sapiente iure delectus sunt magni quidem ullam molestias numquam neque. Minus.</p>
                 <div class="storyButtons">
-                    <button class="move whiteButton">Move</button>
+                    <button class="move whiteButton">Действие</button>
                     <h1>8</h1>
-                    <button class="details whiteButton">Details</button>
+                    <button class="details whiteButton">Детали</button>
                 </div>
             </article>
             </div>
         </div>
     </div>
     <footer id="footer">
-        <button id="createStory" class="blueButton">Create Story</button>
+        <button id="createStory" class="blueButton">Создать историю</button>
         <div id="progressContainer">
            <h1 id="progressPerc">80%</h1>
             <div id="progressBar">
@@ -50,19 +50,19 @@
         </div>
     </footer>
     <div id="details">
-       <h1 id="detailsTitle">Add Story</h1>
+       <h1 id="detailsTitle">Добавить историю</h1>
         <h1>Title</h1>
         <input type="text" id="title">
         <h1>Description</h1>
         <input type="text" id="desc">
-        <h1>Select column</h1>
+        <h1>Выбрать колонку</h1>
         <select name="columnSelect" id="columnSelect"></select>
         <h1>Points</h1>
         <input type="number" id="points">
-        <h1>Color</h1>
+        <h1>Цвет</h1>
         <input type="color" id="storyColor">
         <button id="closeAS" class="closeBtn">X</button>
-        <button id="addStory" class="blueButton">Add Story</button>
+        <button id="addStory" class="blueButton">Добавить историю</button>
     </div>
     <div id="moveStory">
        <button class="closeBtn" id="closeMoveStory">X</button>
