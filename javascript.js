@@ -11,7 +11,7 @@ var endScore = 0;
 var allPoints = 0;
 //Firebase functions
 function getProjectColId(project) {
-    columnList = [];
+    columnList = [5];
     firebaseRef.child("project").child(project).once('value', function (data) {
         data.forEach(function (child) {
             columnList.push({
