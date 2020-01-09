@@ -88,17 +88,6 @@ function createKanban() {
         })
         currentBoard = boardTitle;
     }
-    else {
-        //If board already exists
-        document.getElementById("existing").childNodes.forEach(function (x) {
-            if (x.selected == true) {
-                currentBoard = x.value;
-                firebaseRef.child('project').child(x.value).once("value", function (snapshot) {
-                    snapshot.forEach(function (child) {
-                        columns.push(child.val().title);
-                    });
-                });
-            }
         })
     }
     getProjectColId(currentBoard);
