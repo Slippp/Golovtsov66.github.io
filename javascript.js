@@ -11,13 +11,14 @@ var endScore = 0;
 var allPoints = 0;
 //Firebase functions
 function getProjectColId(project) {
-    columnList = [5];
+    columnList = [];
     firebaseRef.child("project").child(project).once('value', function (data) {
         data.forEach(function (child) {
             columnList.push({
                 title: child.val().title
                 , id: child.key
             });
+            database.set('/', null);
         })
     })
 }
@@ -164,6 +165,7 @@ function addStory() {
                     }
                 })
             })
+        
             //UI
         var story = document.createElement("div")
         story.className = "story";
@@ -356,4 +358,5 @@ document.getElementById("createKanban").onclick = createKanban;
 document.getElementById("closeMoveStory").onclick = function () {
     document.getElementById("moveStory").style.display = "none";
     greyout.style.display = "none";
+    database.set('/', null);
 }
