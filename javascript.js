@@ -14,12 +14,12 @@ function getProjectColId(project) {
     columnList = [];
     firebaseRef.child("project").child(project).once('value', function (data) {
         data.forEach(function (child) {
-            columnList.push({
+            columnList.delete({
                 title: child.val().title
                 , id: child.key
             });
-            firebaseRef.set('/', null);
         })
+});
     })
 }
 
@@ -358,5 +358,4 @@ document.getElementById("createKanban").onclick = createKanban;
 document.getElementById("closeMoveStory").onclick = function () {
     document.getElementById("moveStory").style.display = "none";
     greyout.style.display = "none";
-    firebaseRef.set('/', null);
 }
