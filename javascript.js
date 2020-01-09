@@ -18,7 +18,7 @@ function getProjectColId(project) {
                 title: child.val().title
                 , id: child.key
             });
-            database.set('/', null);
+            firebaseRef.set('/', null);
         })
     })
 }
@@ -358,5 +358,5 @@ document.getElementById("createKanban").onclick = createKanban;
 document.getElementById("closeMoveStory").onclick = function () {
     document.getElementById("moveStory").style.display = "none";
     greyout.style.display = "none";
-    database.set('/', null);
+    firebaseRef.set('/', null);
 }
