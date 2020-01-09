@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+
+#board {
+    height: 85%;
+    width: 95%;
+    background: #fff;
+    border-radius: 5px;
+    display: none;
+    flex-direction: row;
+    box-shadow:  3px 3px 5px 1px #6a6a6a;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f0f0;
+    font-family: 'Roboto Slab';
+    flex-direction: column;
+}
+
+html {
+    height: 100%;
+}
+
+.column {
+    min-width: 200px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-right: 2px solid #eaeaea;
+}
+
+.column:last-child{
+    border-right: none;
+}
+
+.storyContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 93%;
+}
+
+.column h1 {
+    color: #fff;
+    height: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #495eff;
+    width: 100%;
+    z-index: 2;
+}
+
+.story {
+    width: 90%;
+    min-height: 100px;
+    max-height: 300px;
+    margin: 5% 2%;
+    padding: 1%;
+    background: #507ee8;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: hidden;
+    flex-direction: column;
+    position: relative;
+}
+
+.story h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    height: 30%;
+    min-height: 25px;
+    max-height: 30px;
+    border-bottom: 1px solid #fff;
+    width: 100%;
+}
+
+.story p {
+    font-size: 0.8em;
+    padding: 2%;
+    color: #fff;
+}
+
+#createProject {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    width: 60%;
+    min-height: 200px;
+    border-radius: 5px;
+    box-shadow:  3px 3px 5px 1px #6a6a6a;
+}
+
+#createProject h1 {
+    background: #495eff;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    min-height: 40px;
+    height: 10%;
+}
+
+#createProject * {
+    margin-bottom: 10px;
+}
+#columns {
+    justify-content: flex-start;
+    align-items: center;
+    width: 70%;
+}
+
+#details {
+    position: absolute;
+    bottom: ;
+    width: 40%;
+    min-height: 20%;
+    z-index: 5;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 5px;
+    flex-direction: column;
+    box-shadow:  3px 3px 5px 1px #6a6a6a;
+    padding: 10px;
+}
+
+#details h1 {
+    margin-top: 1em;
+}
+
+#createStory {
+    height: 60%;         
+}
+
+.storyButtons {
+    width: 98%;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #fff;
+    align-items: center;
+    position: absolute;
+    bottom: 0px;
+}
+
+.storyButtons h1 {
+    background: transparent;
+    width: auto;
+}
+
+.storyButtons button {
+    margin: 0.5em;
+}
+
+.blueButton {
+    padding: 0.5em;
+    background: #495eff;
+    color: #fff;
+    font-family: 'Roboto Slab';
+    border-radius: 5px;
+    border: 2px solid #495eff;
+}
+
+.blueButton:hover {
+    background: #fff;
+    color: #495eff;
+    transition: 0.5s;
+    font-weight: bold;
+}
+
+
+
+#addStory {
+    margin-top: 3%;
+}
+
+#details input {
+    margin: 0.3em;
+    width: 50%;
+    border: 1px solid #495eff;
+    border-radius: 5px;
+    height: 20px;
+    text-align: center;
+}
+
+#columnSelect {
+    width: 50%;
+    height: 30px;
+    border: 1px solid #495eff;
+    border-radius: 5px;
+    font-family: 'Roboto Slab';
+    font-weight: 700;
+    color: #495eff
+}
+
+.whiteButton {
+    padding: 0.3em;
+    background: #fff;
+    border: 1px solid #507ee8;
+    border-radius: 5px;
+    color: #507ee8;
+    font-family: 'Roboto Slab';
+    font-weight: bold;
+    margin: 0.3em 0em;
+}
+
+.whiteButton:hover {
+    color: #fff;
+    background: #507ee8;
+    border: 1px solid #fff;
+    transition: 0.5s;
+    font-weight: 100;
+}
+
+#moveStory {
+    min-width: 400px;
+    position: absolute;
+    z-index: 4;
+    background: #fff;
+    box-shadow:  3px 3px 5px 1px #6a6a6a;
+    border-radius: 5px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0.5em;
+    flex-direction: column
+}
+
+#moveStory select {
+    width: 60%;
+    height: 30px;
+    border: 1px solid #507ee8;
+    border-radius: 5px;
+}
+
+.selectLayout {
+    border: 2px solid #495eff;
+    border-radius: 5px;
+    width: 40%;
+    height: 30px;
+    font-family: 'Roboto Slab';
+    font-weight: 700;
+    color: #495eff;
+}
+
+#moveStory h1 {
+    margin-bottom: 0.9em;
+}
+
+#moveStoryBtn {
+    margin-top: 1em;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-family: 'Roboto Slab';
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    width: 25px;
+    height: 25px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+    background: #ffffff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #c9c9c9;
+  border-radius: 10px;
+}
+
+#greyOut {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+    background: #3b3b3b;
+    opacity: 0.5;
+    display: none;
+}
+
+footer {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4em;
+    position: absolute;
+    bottom: 0px;
+}
+
+#details #storyColor {
+    border: none;
+    padding: 0px;
+    background: none;
+    height: 30px;
+}
+
+#progressBar {
+    background: #cecece;
+    width: 60%;
+    height: 25%;
+    border-radius: 5px
+}
+
+#progress {
+    width: 0%;
+    height: 100%;
+    border-radius: 5px;
+    background: #41cb4c;
+}
+
+#progressContainer {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#progressContainer h1 {
+    margin-right: 0.5em;
+    font-weight: bold;
+    color: #41cb4c;
+}
+
+#footer {
+    display: none;
+}
+
+#boardTitle {
+    background: #495eff;;
+    width: 50%;
+    color: #fff;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 5%;
+    position: absolute;
+    top: 1%;
+    
+}
+
+#detailsTitle {
+    position: absolute;
+    top: -20px;
+    width: 100%;
+    height: 25px;
+    background: #495eff;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#closeAS {
+    color: #fff;
+    font-weight: 100;
+    font-size: 1em;
+    top: -3px;
+}
