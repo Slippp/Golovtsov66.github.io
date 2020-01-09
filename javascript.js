@@ -174,18 +174,18 @@ function addStory() {
         p.innerHTML = desc;
         var div = document.createElement("div");
         div.classList.add("storyButtons");
-        var b1 = document.createElement("button");
-        b1.innerHTML = "Details";
-        b1.classList.add("Details");
-        b1.classList.add("whiteButton");
+        var b1 = document.createElement("кнопка");
+        b1.innerHTML = "Детали";
+        b1.classList.add("Детали");
+        b1.classList.add("БКнопка");
         var pointsEl = document.createElement("h1");
         pointsEl.innerHTML = points;
-        var b2 = document.createElement("button");
-        b2.innerHTML = "Move";
-        b2.classList.add("Move");
-        b2.classList.add("whiteButton");
-        b2.setAttribute("name", col.id)
-        b2.setAttribute("storyId", storyId)
+        var b2 = document.createElement("кнопка");
+        b2.innerHTML = "Действие";
+        b2.classList.add("Действие");
+        b2.classList.add("БКнопка");
+        b2.setAttribute("Название", col.id)
+        b2.setAttribute("Id", storyId)
         b2.onclick = openMoveScreen;
         div.appendChild(b1);
         div.appendChild(pointsEl);
@@ -218,17 +218,17 @@ function addStory() {
                                     p.innerHTML = desc;
                                     var div = document.createElement("div");
                                     div.classList.add("storyButtons");
-                                    var b1 = document.createElement("button");
-                                    b1.innerHTML = "Details";
-                                    b1.classList.add("Details");
-                                    b1.classList.add("whiteButton");
+                                    var b1 = document.createElement("кнопка");
+                                    b1.innerHTML = "Детали";
+                                    b1.classList.add("Детали");
+                                    b1.classList.add("БКнопка");
                                     var pointsEl = document.createElement("h1");
                                     pointsEl.innerHTML = points;
-                                    var b2 = document.createElement("button");
-                                    b2.innerHTML = "Move";
-                                    b2.classList.add("Move");
-                                    b2.classList.add("whiteButton");
-                                    b2.setAttribute("name", colObj.title)
+                                    var b2 = document.createElement("кнопка");
+                                    b2.innerHTML = "Действие";
+                                    b2.classList.add("Действие");
+                                    b2.classList.add("БКнопка");
+                                    b2.setAttribute("Название", colObj.title)
                                     b2.setAttribute("storyId", str.key)
                                     b2.onclick = openMoveScreen;
                                     div.appendChild(b1);
@@ -247,11 +247,11 @@ function addStory() {
         })
         isNew = true;
     }
-    document.getElementById("details").style.display = "none";
-    greyout.style.display = "none";
+    document.getElementById("details").style.display = "нет";
+    greyout.style.display = "нет";
     document.getElementById("createStory").style.display = "flex";
-    var progressbar = document.getElementById("progress");
-    var progressPerc = document.getElementById("progressPerc");
+    var progressbar = document.getElementById("прогресс");
+    var progressPerc = document.getElementById("прогрессПерк");
     getEndPoints();
     getAllPoints();
     var perc = null
@@ -262,7 +262,7 @@ function addStory() {
         perc = Math.round(endScore / allPoints * 100) + "%";
     }
     progressbar.style.width = perc;
-    progressPerc.innerHTML = "Progress: " + perc;
+    progressPerc.innerHTML = "Прогресс: " + perc;
 }
 
 function moveStory() {
@@ -303,22 +303,22 @@ function moveStory() {
         columns = [];
         createKanban();
     })
-    document.getElementById("moveStory").style.display = "none";
-    greyout.style.display = "none";
+    document.getElementById("moveStory").style.display = "нет";
+    greyout.style.display = "нет";
 }
 //Btn functions
 function openMoveScreen() {
     greyout.style.display = "flex";
-    document.getElementById("moveStory").style.display = "flex";
-    document.getElementById("moveToCol").innerHTML = "";
+    document.getElementById("ПереходИстория").style.display = "flex";
+    document.getElementById("Переход").innerHTML = "";
     storyName = this.name;
-    storyId = this.getAttribute("storyid");
+    storyId = this.getAttribute("id");
     columnList.forEach(function (title) {
         if (title.title != storyName) {
-            var option = document.createElement("option");
+            var option = document.createElement("опции");
             option.value = title.title;
             option.innerHTML = title.title;
-            document.getElementById("moveToCol").appendChild(option);
+            document.getElementById("Переход").appendChild(option);
         }
     })
 }
@@ -326,7 +326,7 @@ window.onload = function () {
     firebaseRef.child("project").on('value', snap => {
         var data = snap.val();
         for (x in data) {
-            var option = document.createElement("option");
+            var option = document.createElement("опции");
             option.value = x;
             option.innerHTML = x;
             document.getElementById("existing").appendChild(option);
@@ -334,9 +334,9 @@ window.onload = function () {
     })
 }
 document.getElementById("closeAS").onclick = function () {
-    document.getElementById("details").style.display = "none";
+    document.getElementById("Детали").style.display = "none";
     document.getElementById("createStory").style.display = "block";
-    greyout.style.display = "none";
+    greyout.style.display = "нет";
 }
 document.getElementById("addStory").onclick = addStory;
 document.getElementById("createStory").onclick = function () {
