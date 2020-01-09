@@ -14,7 +14,7 @@ function getProjectColId(project) {
     columnList = [];
     firebaseRef.child("project").child(project).once('value', function (data) {
         data.forEach(function (child) {
-            columnList.delete({
+            columnList.push({
                 title: child.val().title
                 , id: child.key
             });
