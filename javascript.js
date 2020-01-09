@@ -19,7 +19,6 @@ function getProjectColId(project) {
                 , id: child.key
             });
         })
-});
     })
 }
 
